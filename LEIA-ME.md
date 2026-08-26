@@ -1,92 +1,43 @@
-# Nexo Finance — GitHub Edition v8
+# Nexo Finance Cloud v9
 
-Esta edição foi criada para funcionar **sem VPS, sem Node.js e sem banco de dados externo**. Pode ser publicada diretamente no **GitHub Pages**.
+Esta versão mantém o GitHub Pages como hospedagem da interface e usa Supabase como autoridade para contas e dados.
 
-## O que mudou
+## Publicação no GitHub Pages
 
-- `index.html` é totalmente estático e funciona no GitHub Pages.
-- Ao criar uma conta pública, o navegador gera e baixa automaticamente `nexo-conta-USUARIO.nexo`.
-- O arquivo `.nexo` contém a conta e os dados financeiros criptografados.
-- Criptografia: **PBKDF2-SHA-256 (210.000 iterações) + AES-GCM 256 bits** via Web Crypto API.
-- O arquivo pode ser importado na própria tela de login em outro navegador/computador/celular.
-- Em **Minha conta**, existe o botão **Baixar arquivo-cofre atualizado**.
-- Ao trocar a senha, um novo arquivo-cofre é gerado automaticamente.
-- Arquivos portáteis nunca restauram privilégios de administrador: a importação força o papel `member`.
-- O cadastro público global é definido pelo arquivo `site-config.js`.
+1. No repositório `jcpej/nexo-finance`, substitua o `index.html` atual pelo `index.html` desta pasta.
+2. Mantenha `.nojekyll` na raiz. O antigo `site-config.js` pode permanecer, mas não é mais utilizado pela v9.
+3. Aguarde o GitHub Pages concluir o deployment e abra `https://jcpej.github.io/nexo-finance/`.
 
-## Limitação inevitável do GitHub Pages
+## Primeira abertura
 
-GitHub Pages é hospedagem estática. Um visitante do site **não pode gravar automaticamente um arquivo novo dentro do repositório**.
+Enquanto ainda não existir administrador cloud, o site mostrará "Ativar administrador na nuvem".
 
-Fazer isso exigiria uma credencial do GitHub com permissão de escrita. Colocar essa credencial dentro do JavaScript público seria inseguro: qualquer visitante conseguiria extraí-la e escrever/apagar conteúdo do repositório.
+- Usuário administrativo: `admin`
+- Defina uma senha forte de no mínimo 12 caracteres.
+- Informe o código de instalação fornecido pelo ChatGPT na conversa. Não coloque esse código em arquivos do GitHub.
 
-Por isso, nesta edição:
+Após a criação inicial, o bootstrap passa a recusar novas criações de administrador.
 
-1. A conta fica no navegador em que foi criada.
-2. Uma cópia portátil criptografada é baixada para o usuário.
-3. Em outro dispositivo, o usuário restaura a conta usando o arquivo `.nexo` + senha.
-4. O GitHub hospeda **o aplicativo**, não os dados privados das contas.
+## Cadastro público
 
-Consequência: contas criadas em computadores diferentes **não aparecem automaticamente no painel do administrador**. Mensagens e visão consolidada do admin também são locais ao navegador. Para sincronização central em tempo real é necessário algum serviço de backend/banco, ainda que gratuito.
+Depois de entrar como admin:
 
-## Como publicar no GitHub Pages
+1. Abra **Administração**.
+2. Entre no **Comando 06 — Cadastro público**.
+3. Ative a chave.
 
-1. Crie uma conta no GitHub, caso ainda não tenha.
-2. Crie um repositório novo. Exemplo: `nexo-finance`.
-3. Envie para a raiz do repositório estes arquivos:
-   - `index.html`
-   - `site-config.js`
-   - `.nojekyll`
-4. Abra **Settings** do repositório.
-5. Entre em **Pages**.
-6. Em **Build and deployment > Source**, escolha **Deploy from a branch**.
-7. Escolha a branch **main** e a pasta **/(root)**.
-8. Clique em **Save**.
-9. Quando o GitHub terminar a publicação, a própria página de Settings > Pages mostrará o endereço do site.
+A alteração é salva no Supabase e passa a valer para todos os dispositivos. Não é mais necessário editar `site-config.js`.
 
-## Abrir ou fechar o cadastro para todos
+## Persistência
 
-O arquivo `site-config.js` contém:
-
-```js
-publicRegistration: true
-```
-
-- `true` = cadastro aberto.
-- `false` = cadastro fechado.
-
-No painel administrativo, o comando de cadastro gera automaticamente um novo `site-config.js` quando você muda a chave. Depois, substitua o arquivo no repositório GitHub.
-
-Essa substituição manual é necessária porque o site público não recebe credenciais de escrita do GitHub.
-
-## Arquivo-cofre `.nexo`
-
-### Criação
-Ao concluir um cadastro público, o download é disparado automaticamente.
-
-### Restaurar em outro dispositivo
-1. Abra o Nexo Finance.
-2. Clique em **Abrir meu arquivo de conta**.
-3. Selecione o `.nexo`.
-4. Digite a senha da conta.
-5. A conta e os dados contidos naquela cópia serão restaurados no navegador.
-
-### Manter o cofre atualizado
-Depois de lançar novas movimentações, investimentos, metas etc., entre em **Minha conta > Baixar arquivo-cofre atualizado**.
-
-O navegador não consegue alterar automaticamente um arquivo que já está na pasta Downloads de forma universal, especialmente em iPhone/Safari. Por isso é gerada uma nova cópia quando solicitado.
+- Login e senha: Supabase Auth.
+- Perfis: tabela `profiles`.
+- Dados financeiros: `user_state`.
+- Configuração global: `app_settings`.
+- Mensagens: `messages` e `message_reads`.
+- Auditoria: `audit_logs`.
+- Acesso por usuário é protegido por Row Level Security (RLS).
 
 ## Segurança
 
-- Não envie arquivos `.nexo` para o repositório GitHub.
-- Não coloque extratos, backups ou arquivos JSON de usuários no repositório.
-- O repositório do GitHub Pages deve conter somente os arquivos públicos do aplicativo.
-- Use uma senha forte para o arquivo-cofre.
-- Guarde pelo menos uma cópia do `.nexo` em local confiável.
-
-## Arquivos
-
-- `index.html` — aplicativo.
-- `site-config.js` — abre/fecha cadastro público global no site estático.
-- `.nojekyll` — impede processamento desnecessário pelo Jekyll.
-- `LEIA-ME.md` — este guia.
+O HTML contém apenas a publishable key do Supabase, apropriada para aplicações web públicas com RLS. Chaves administrativas permanecem somente nas Edge Functions do Supabase.
