@@ -1,21 +1,13 @@
-NEXO FINANCE CLOUD v9.1 — HOSPEDAGEM
+NEXO FINANCE CLOUD v9.2
 
-Arquivos que devem ficar na RAIZ da hospedagem:
-- index.html
-- .nojekyll
-- LEIA-ME.md
-- COMO-HOSPEDAR.txt
+1. Extraia este ZIP.
+2. No repositório GitHub que publica o Nexo Finance, substitua o index.html atual por este index.html.
+3. Mantenha/envie também o arquivo .nojekyll na raiz.
+4. Faça Commit changes.
+5. Aguarde o GitHub Pages atualizar e recarregue o site com Ctrl+F5.
 
-GITHUB PAGES
-1. Abra o repositorio nexo-finance.
-2. Remova/substitua o index.html antigo.
-3. Em Add file > Upload files, envie TODOS os arquivos desta pasta.
-4. Confirme o commit na branch main.
-5. Em Settings > Pages, mantenha Deploy from a branch > main > /(root).
-6. Aguarde o deployment ficar verde.
-7. Abra: https://jcpej.github.io/nexo-finance/
+LOGIN ADMIN JÁ CRIADO NO SUPABASE
+Usuário: admin
+Senha: use a senha administrativa já definida anteriormente.
 
-IMPORTANTE
-- A v9.1 usa Supabase para contas e dados na nuvem.
-- site-config.js da versao antiga nao e necessario.
-- O arquivo .nojekyll deve permanecer na raiz.
+A senha não está gravada neste pacote.
