@@ -1,10 +1,6 @@
-NEXO FINANCE CLOUD v9.3
-
-GitHub Pages:
-- Extraia este ZIP.
-- Na raiz do repositorio, substitua o index.html pelo deste pacote.
-- Mantenha/envie tambem o arquivo .nojekyll.
-- Faça Commit changes.
-- Aguarde o deploy do GitHub Pages.
-- Pressione Ctrl+F5.
-- Confirme que no canto inferior esquerdo aparece: Cloud v9.3
+1. Extraia este ZIP.
+2. Envie index.html e .nojekyll para a raiz do repositório GitHub Pages.
+3. Substitua o index.html anterior.
+4. Faça Commit changes.
+5. Aguarde o Pages publicar e recarregue o site.
+6. No rodapé da lateral confirme: Cloud v9.4.
