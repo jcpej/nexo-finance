@@ -1,13 +1,10 @@
-NEXO FINANCE CLOUD v9.2
+NEXO FINANCE CLOUD v9.3
 
-1. Extraia este ZIP.
-2. No repositório GitHub que publica o Nexo Finance, substitua o index.html atual por este index.html.
-3. Mantenha/envie também o arquivo .nojekyll na raiz.
-4. Faça Commit changes.
-5. Aguarde o GitHub Pages atualizar e recarregue o site com Ctrl+F5.
-
-LOGIN ADMIN JÁ CRIADO NO SUPABASE
-Usuário: admin
-Senha: use a senha administrativa já definida anteriormente.
-
-A senha não está gravada neste pacote.
+GitHub Pages:
+- Extraia este ZIP.
+- Na raiz do repositorio, substitua o index.html pelo deste pacote.
+- Mantenha/envie tambem o arquivo .nojekyll.
+- Faça Commit changes.
+- Aguarde o deploy do GitHub Pages.
+- Pressione Ctrl+F5.
+- Confirme que no canto inferior esquerdo aparece: Cloud v9.3

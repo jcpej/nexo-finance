@@ -1,12 +1,13 @@
-# Nexo Finance Cloud v9.2
+# Nexo Finance Cloud v9.3
 
-Versão para GitHub Pages integrada ao Supabase.
+Pacote para GitHub Pages.
 
-## Correção v9.2
-- Menu lateral recebe listeners de clique próprios e independentes.
-- Cada botão da navegação troca diretamente para a respectiva seção.
-- O listener global continua apenas para ações internas da página, evitando disparo duplicado.
-- Conta administrativa e dados continuam no Supabase.
+## Publicação
+1. Envie `index.html` e `.nojekyll` para a raiz do repositório.
+2. Substitua o `index.html` anterior.
+3. Aguarde o GitHub Pages publicar.
+4. Recarregue com Ctrl+F5.
+5. No rodapé da barra lateral deve aparecer `Cloud v9.3`.
 
-## Hospedagem
-Envie `index.html` e `.nojekyll` para a raiz do repositório GitHub Pages, substituindo o `index.html` anterior.
+## Correção v9.3
+A navegação lateral não depende mais do listener de inicialização: cada botão chama diretamente a troca de seção. O menu também recebeu reforço de `pointer-events`.
