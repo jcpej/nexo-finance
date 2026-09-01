@@ -1,0 +1,47 @@
+RELATÓRIO DE TESTES — 3 CICLOS
+
+CICLO 1 — ADMINISTRAÇÃO: PASSOU
+- Login administrativo.
+- Rotação automática do banner após 8 segundos.
+- Adicionar banner.
+- Editar banner.
+- Ativar/pausar banner.
+- Criar usuário.
+- Editar nome e senha do usuário.
+- Enviar mensagem individual.
+- Abrir cadastro público.
+- Monitor de presença local.
+- Exportar backup.
+- Auditoria.
+
+CICLO 2 — USUÁRIO/FINANCEIRO: PASSOU
+- Login de membro.
+- Renda ativa.
+- Renda passiva.
+- Despesa.
+- Edição de lançamento.
+- Filtro e exportação CSV.
+- Cadastro de 3 investimentos em classes/setores diferentes.
+- Atualização do valor atual de investimento.
+- Gráficos por ativo, classe e setor.
+- Renda recorrente.
+- Meta financeira e aporte.
+- Orçamento mensal.
+- Mensagem privada e leitura.
+- Dashboard e gráfico de 6 meses.
+
+CICLO 3 — REGRESSÃO/MOBILE/TEMPO REAL: PASSOU
+- Todas as 8 telas abertas em viewport 390 x 844.
+- Sem overflow horizontal de página.
+- Rotação automática do banner após 8 segundos.
+- Handler de sincronização em tempo real executado.
+- Heartbeat/presença local detectado.
+
+VALIDAÇÕES ESTÁTICAS
+- JavaScript aprovado em node --check.
+- IDs HTML únicos e referências DOM conferidas.
+- Sem Chart.js, CDN ou stylesheet/script externo obrigatório.
+- ZIP testado após compactação.
+
+Observação do ambiente de teste:
+O navegador automatizado deste ambiente bloqueia navegação direta para localhost/file://. Os testes funcionais foram executados em Chromium com o mesmo HTML e um armazenamento local em memória injetado apenas pelo harness de teste. O arquivo entregue mantém localStorage nativo para uso real no navegador.

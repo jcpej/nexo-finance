@@ -1,0 +1,32 @@
+NEXO FINANCE PRO — VERSÃO FINAL
+
+ABERTURA RÁPIDA
+1. Extraia todo o ZIP.
+2. Abra index.html.
+3. O index.html é autônomo: CSS e JavaScript estão incorporados e não dependem de CDN.
+
+ADMIN INICIAL
+Usuário: admin
+Senha: admin123
+Troque a senha após o primeiro acesso em Minha conta.
+
+PRINCIPAIS MÓDULOS
+- Dashboard financeiro com renda ativa/passiva, despesas, saldo, patrimônio e autonomia.
+- Carrossel superior com rotação automática a cada 8 segundos.
+- Admin pode adicionar, editar, ativar/pausar, reordenar e remover banners.
+- Lançamentos com filtros, edição, exclusão e exportação CSV.
+- Investimentos com capital aportado, valor atual, resultado, classe e setor econômico.
+- Analytics: alocação por ativo, classe e setor; ranking, HHI e maior concentração.
+- Planejamento: renda recorrente, metas e orçamentos mensais.
+- Mensagens do administrador para um membro ou todos.
+- Minha conta: troca de senha, exportação/importação e limpeza dos próprios dados.
+- Admin: visão consolidada, usuários, banners, mensagens, presença local, backup, auditoria e configurações.
+- Cadastro público pode ser aberto/fechado pelo administrador.
+- Migração de estruturas antigas users_db / usuarios_db e dados legados quando encontrados.
+
+TEMPO REAL — ESCOPO DESTA EDIÇÃO
+O sistema sincroniza alterações entre abas/janelas que compartilham o mesmo armazenamento do navegador usando BroadcastChannel + eventos de Storage e heartbeat de presença. Isso é tempo real LOCAL.
+Para sincronização entre computadores/celulares diferentes e cotações reais de mercado, é necessário backend/WebSocket/API e banco de dados. A aplicação não inventa preços externos.
+
+PASTA SRC
+Contém index-modular.html, style.css e script.js para desenvolvimento/manutenção.
