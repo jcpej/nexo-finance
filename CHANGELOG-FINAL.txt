@@ -1,0 +1,21 @@
+NEXO FINANCE PRO — RESUMO DA VERSÃO FINAL
+
+- Carrossel de banners administrável completo e animação horizontal a cada 8 s.
+- Gestão de banners: adicionar, editar, ativar, pausar, reordenar e remover.
+- Sincronização local em tempo real e monitor de sessões/heartbeat.
+- Renda ativa e passiva com dashboard dedicado.
+- Centro de atenção e evolução de 6 meses.
+- Lançamentos editáveis, filtráveis e exportáveis em CSV.
+- Investimentos com valor atual e alocação por ativo, classe e setor.
+- Métricas de concentração: maior posição e HHI.
+- Planejamento com fontes recorrentes, metas, aportes e orçamento.
+- Mensagens do administrador.
+- Gestão completa de usuários com edição, senha, ativação/desativação e exclusão.
+- Backup/restauração, auditoria e reset financeiro.
+- Cadastro público controlado pelo admin.
+- Área Minha conta e portabilidade de dados.
+- Correção de data local (evita avançar um dia à noite no Brasil).
+- Correção de atualização imediata da interface após gravações.
+- Correção do badge de mensagens.
+- Correção para permitir remover todos os banners sem restaurar os padrões automaticamente.
+- Compatibilidade/migração com estruturas anteriores.
